@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:padding="10dp"
+    android:background="#fff"
+    android:layout_width="match_parent"
+    android:layout_height="150dp">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="10dp"/>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="8.6分"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:textColor="#FFB400"
+        android:textSize="16sp"/>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="55dp"
+        android:layout_height="35dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:background="#aaff0000"
+        android:text="购票"
+        android:textColor="#fff" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="正义联盟"
+        android:layout_toRightOf="@id/imageView"
+        android:layout_toLeftOf="@id/button1"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="3dp"
+        android:textColor="#000"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="动作,冒险"
+        android:layout_toRightOf="@id/imageView"
+        android:layout_toLeftOf="@id/button1"
+        android:layout_below="@id/textView1"
+        android:layout_marginBottom="3dp"
+        android:textColor="#66000000"
+        android:textSize="16sp"/>
+
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="主演:阿弗莱克,盖尔加朵,阿弗莱克,盖尔加朵阿弗莱克,盖尔加朵阿弗莱克,盖尔加朵阿弗莱克,盖尔加朵阿弗莱克,盖尔加朵阿弗莱克,盖尔加朵阿弗莱克,盖尔加朵阿弗莱克,盖尔加朵阿弗"
+        android:layout_toRightOf="@id/imageView"
+        android:layout_toLeftOf="@id/button1"
+        android:layout_below="@id/textView2"
+        android:layout_marginBottom="3dp"
+        
+        android:textColor="#66000000"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2017-11-24 本周五上映"
+        android:layout_toRightOf="@id/imageView"
+        android:layout_toLeftOf="@id/button1"
+        android:layout_below="@id/textView3"
+        android:layout_marginBottom="3dp"
+        android:textColor="#66000000"
+        android:textSize="16sp"/>
+
+</RelativeLayout>
