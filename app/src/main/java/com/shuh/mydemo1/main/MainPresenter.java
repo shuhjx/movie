@@ -45,7 +45,6 @@ public class MainPresenter implements MainContract.Presenter {
 
     @Override
     public void subscribe() {
-        System.out.println("========subscribe========");
         getDataFromHttp(0);
     }
 
@@ -64,18 +63,17 @@ public class MainPresenter implements MainContract.Presenter {
                 .subscribe(new Observer<Movie>() {
                     @Override
                     public void onSubscribe(Disposable d) {
-                        System.out.println("========onSubscribe========");
                     }
 
                     @Override
                     public void onNext(Movie movie) {
+                        System.out.println("========onNext========");
                         mMainView.getMovieList().add(movie);
                     }
 
                     @Override
                     public void onError(Throwable e) {
                         e.printStackTrace();
-                        System.out.println("========onError========");
                     }
 
                     @Override
@@ -90,6 +88,5 @@ public class MainPresenter implements MainContract.Presenter {
 
     @Override
     public void unsubscribe() {
-        System.out.println("========unsubscribe========");
     }
 }

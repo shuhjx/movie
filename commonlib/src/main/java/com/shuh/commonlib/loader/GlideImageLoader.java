@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.request.target.SimpleTarget;
 import com.bumptech.glide.request.transition.Transition;
 import com.shuh.commonlib.R;
+import com.shuh.commonlib.utils.DensityUtils;
 import com.shuh.commonlib.utils.ScreenUtils;
 import static com.google.common.base.Preconditions.checkNotNull;
 /**
@@ -32,8 +33,8 @@ public class GlideImageLoader implements ImageLoader {
                     public void onResourceReady(Bitmap resource, Transition<? super Bitmap> transition) {
                         imageView.setImageBitmap(resource);
                         ViewGroup.LayoutParams layoutParams = imageView.getLayoutParams();
-                        layoutParams.height = imageView.getHeight();
-                        layoutParams.width = ScreenUtils.calWidth(context, imageView.getHeight());
+                        layoutParams.height = DensityUtils.dip2px(context,130);
+                        layoutParams.width = ScreenUtils.calWidth(context, layoutParams.height);
                         imageView.setLayoutParams(layoutParams);
                     }
                 });
@@ -54,8 +55,8 @@ public class GlideImageLoader implements ImageLoader {
                     public void onResourceReady(Bitmap resource, Transition<? super Bitmap> transition) {
                         imageView.setImageBitmap(resource);
                         ViewGroup.LayoutParams layoutParams = imageView.getLayoutParams();
-                        layoutParams.height = imageView.getHeight();
-                        layoutParams.width = ScreenUtils.calWidth(view.getContext(), imageView.getHeight());
+                        layoutParams.height = DensityUtils.dip2px(view.getContext(),130);
+                        layoutParams.width = ScreenUtils.calWidth(view.getContext(), layoutParams.height);
                         imageView.setLayoutParams(layoutParams);
                     }
                 });

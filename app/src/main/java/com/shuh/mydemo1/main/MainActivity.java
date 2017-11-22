@@ -3,6 +3,7 @@ package com.shuh.mydemo1.main;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
+import com.shuh.commonlib.BottomBorderItemDecoration;
 import com.shuh.commonlib.adapter.CommonRecyclerAdapter;
 import com.shuh.mydemo1.R;
 import com.shuh.mydemo1.holder.MovieViewHolder;
@@ -59,14 +61,14 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
             }
         });
 
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, true));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 1, GridLayoutManager.VERTICAL, false));
+        mRecyclerView.addItemDecoration(new BottomBorderItemDecoration());
         mRecyclerView.setAdapter(mAdapter = new CommonRecyclerAdapter(this, mList) {
             @Override
             public ViewHolder createHolder(ViewGroup parent, int viewType) {
                 return new MovieViewHolder(LayoutInflater.from(context).inflate(R.layout.movie_item, parent, false));
             }
         });
-
 
     }
 
@@ -82,10 +84,10 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     @Override
     public void refreshData(){
         mRefreshLayout.finishRefresh();
+        mRefreshLayout.finishLoadmore();
+
         if(mAdapter != null)
             mAdapter.notifyDataSetChanged();
-        if(offset == 0)
-            mRecyclerView.scrollToPosition(0);
     }
     /**********View end************/
 
