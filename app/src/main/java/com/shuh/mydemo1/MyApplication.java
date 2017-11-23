@@ -25,7 +25,7 @@ public class MyApplication extends Application {
     }
 
     private void initImageLoader(){
-        mImageLoader = new GlideImageLoader();
+        mImageLoader = GlideImageLoader.getInstance();
     }
 
     public ImageLoader getImageLoader(){

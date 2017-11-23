@@ -18,6 +18,14 @@ import static com.google.common.base.Preconditions.checkNotNull;
  */
 
 public class GlideImageLoader implements ImageLoader {
+
+    private static final GlideImageLoader mInstance = new GlideImageLoader();
+    private GlideImageLoader(){}
+
+    public static GlideImageLoader getInstance(){
+        return mInstance;
+    }
+
     @Override
     public void setImageUrl(final Context context, String url, final ImageView imageView) {
         checkNotNull(imageView, "imageView == null");
